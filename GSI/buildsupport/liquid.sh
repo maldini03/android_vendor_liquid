@@ -58,7 +58,7 @@ rm -f device/*/sepolicy/common/private/genfs_contexts
 
 #We want our Table
 rm -rf device/phh/treble
-git clone -b android-8.1 https://github.com/LiquidRemix-Devices/device_phh_treble.git
+git clone -b android-8.1 https://github.com/LiquidRemix-Devices/device_phh_treble.git device/phh/treble
 bash "$(dirname "$0")/apply-patches.sh" patches
 
 . build/envsetup.sh

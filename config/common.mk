@@ -226,6 +226,10 @@ PRODUCT_COPY_FILES += \
     vendor/liquid/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
+# Copy all LiquidRemix-specific init rc files
+$(foreach f,$(wildcard vendor/liquid/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
+
 # Power whitelist
 PRODUCT_COPY_FILES += \
     vendor/liquid/config/permissions/liquid-power-whitelist.xml:system/etc/sysconfig/liquid-power-whitelist.xml
